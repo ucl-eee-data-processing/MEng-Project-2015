@@ -20,6 +20,7 @@ Rails.application.config.assets.precompile += %w( http://maps.googleapis.com/map
 
 Rails.application.config.assets.precompile += %w( bootstrap.css )
 Rails.application.config.assets.precompile += %w( normalize.css )
-Rails.application.config.assets.precompile += %w( style.css )
+Rails.application.config.assets.precompile += %w( http://d3js.org/d3.v3.min.js )
+Rails.application.config.assets.precompile += %w( pages.css )
 Rails.application.config.assets.precompile += %w( http://fonts.googleapis.com/css?family=Open+Sans.css )
 Rails.application.config.assets.precompile += %w( https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css )

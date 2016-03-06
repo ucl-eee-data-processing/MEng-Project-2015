@@ -45,13 +45,11 @@
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans', :rel =>'stylesheet'%>
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', :rel =>'stylesheet'%>
     <%= stylesheet_link_tag 'bootstrap.css', :rel =>'stylesheet'%>
-    <!--%= stylesheet_link_tag 'style.css', :rel =>'stylesheet'%-->
-
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <!--%= javascript_include_tag 'application', 'data-turbolinks-track' => true %-->
-  <!--%= javascript_include_tag 'application', 'data-turbolinks-track' => true %-->
+  <%= javascript_include_tag 'http://d3js.org/d3.v3.min.js' %>
+  <%= javascript_include_tag 'http://maps.googleapis.com/maps/api/js' %>
   <%= csrf_meta_tags %>
 
    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -61,7 +59,6 @@
     <![endif]-->
 
 </head>
-
 
 <body>
     <header>
