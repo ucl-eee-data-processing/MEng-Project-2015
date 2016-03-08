@@ -1,5 +1,4 @@
 $(document).ready(function() {
-//$(document).on('page:load', function () {
 	//set time frame to request data from the backend 
 	$("button").click(function() {
 	 var value = "'time_frame' : {" + "'start_time :'" + document.getElementById('start_time').value + 
@@ -160,6 +159,7 @@ $(document).ready(function() {
 				  })
 				  .interpolate("basis");
 
+	// 1. added to generate the second chart on same graph
 	var lineGenerator2 = d3.svg.line()
 				  .x(function(d) {
 				    return x(d.created_time);
@@ -181,13 +181,14 @@ $(document).ready(function() {
 	  dataset.forEach(function(d){
 	  	d.created_time = parseDate(d.created_time);
 	  	d.actual = +d.actual;
-	  	d.predicted = +d.predicted;
+	  	d.predicted = +d.predicted; // 2. added to generate the second chart on same graph
 	  });
 
 	// scale the range of the plot from the data
 	  x.domain(d3.extent(dataset, function(d) {
 	  	return d.created_time;
 	  }));
+	  // 3. added to generate the 2 curves/chart on same graph
 	  y.domain([0, d3.max(dataset, function(d) { return Math.max(d.actual, d.predicted); })]);
 	  
 	  // to be used later for single plots
@@ -225,7 +226,8 @@ $(document).ready(function() {
                         .attr('stroke-width', 4)
                         .attr('fill', '#bcddbc');
 
-          //add linegenerator line path
+          //add linegenerator2 line path
+          // added to generate the second chart on same graph
           svg.append('svg:path')
                         .attr('d', lineGenerator2(dataset))
                         .attr('stroke', '#3D95CE')
