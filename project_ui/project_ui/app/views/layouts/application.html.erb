@@ -45,14 +45,15 @@
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans', :rel =>'stylesheet'%>
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', :rel =>'stylesheet'%>
     <%= stylesheet_link_tag 'bootstrap.css', :rel =>'stylesheet'%>
-
+    <%= stylesheet_link_tag 'nv.d3.min.css', :rel => "stylesheet" %>
+    
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'http://maps.googleapis.com/maps/api/js' %>
 
   <%= javascript_include_tag  'http://d3js.org/d3.v3.js', :charset => "utf-8" %>
-  <%= stylesheet_link_tag 'nv.d3.min.css', :rel => "stylesheet" %>
-  <%= javascript_include_tag 'nv.d3.min.js' %>
   
+  <%= javascript_include_tag 'nv.d3.min.js' %>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>

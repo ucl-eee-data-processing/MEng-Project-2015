@@ -123,9 +123,9 @@ $(document).ready(function() {
         top: 20,
 	    right: 20,
 	    bottom: 20,
-	    left: 120
+	    left: 40
 	   },
-    	width = 1000,
+    	width = 1100,
     	height = 600;
     
 	// Parse the date / time
@@ -199,9 +199,9 @@ $(document).ready(function() {
           .call(yAxis)
           .append("text")
           .attr("transform", "rotate(0)")
-          .attr("y", 6)
-          .attr("dy", "-0.60em")
-          .style("text-anchor", "end")
+          .attr("y", 10)
+          .attr("dy", "0.40em")
+          .style("text-color", "blue")
           .text("Actual value");
 
     svg.append("path")
