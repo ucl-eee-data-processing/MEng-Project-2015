@@ -162,7 +162,8 @@ $(document).ready(function() {
 	  })
 	  .y(function(d) {
 	    return y(d.actual);
-	  });
+	  })
+	  .interpolate("basis");
 
 	  var svg = d3.select('#penergy').append("svg")
 			    .attr('width', width)
@@ -184,7 +185,7 @@ $(document).ready(function() {
 	  }));
 
 	   contain.append("svg:g")
-          .attr("class", "x axis")
+          .attr("class", "axes")
           .attr("transform", "translate(0," + (height - margins.bottom) + ")")
           .call(xAxis)
           .selectAll("text")
@@ -194,22 +195,28 @@ $(document).ready(function() {
 	      .attr("transform", "rotate(-90)" );
 
     	contain.append("svg:g")
-          .attr("class", "y axis")
+          .attr("class", "axes")
           .attr("transform", "translate(" + (margins.left) + ", 0)")
           .call(yAxis)
           .append("text")
           .attr("transform", "rotate(0)")
           .attr("y", 10)
           .attr("dy", "0.40em")
-          .style("text-color", "blue")
+          .style("color", "blue")
           .text("Actual value");
 
-    svg.append("path")
-          .datum(dataset)
-          .attr("class", "line")
-           .style("fill", "none")
-    .style("stroke", "blue")
-          .attr("d", lineGenerator);
+          svg.append('svg:path')
+                        .attr('d', lineGenerator(dataset))
+                        .attr('stroke', 'blue')
+                        .attr('stroke-width', 7)
+                        .attr('fill', '#bcddbc');
+
+	    // contain.append("svg:path")
+		   //      .datum(dataset)
+		   //      .attr("class", "line")
+		   //      .style("fill", "none")
+		   //  	.style("stroke", "blue")
+		   //      .attr("d", lineGenerator);
 
 	function penergy(){
 
