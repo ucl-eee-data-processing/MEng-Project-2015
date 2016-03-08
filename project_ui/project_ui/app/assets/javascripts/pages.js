@@ -132,17 +132,12 @@ $(document).ready(function() {
 	var	parseDate = d3.time.format("%d/%m/%Y %H:%M:%S").parse;
 
 	//area available to plot the graph on x-axis
-
-	 // var x = d3.time.scale()
-  //    .domain([new Date(dataset[0].created_time), d3.time.day.offset(new Date(dataset[dataset.length - 1].created_time), 1)])
-  //    .rangeRound([0, width - margins.right ]);
-
      var x = d3.time.scale().range([0, width ]);
 
      var y = d3.scale.linear()
          .range([height - margins.top, margins.bottom]);
-	// var y = d3.scale.linear().domain([0, d3.max(dataset, function(d) { return d.actual; })])
- //    .range([height - margins.top, margins.bottom]);
+
+     var z = d3.scale.linear().range([height - margins.top, margins.bottom]);
 
     var xAxis =  d3.svg.axis()
 				    .scale(x)
@@ -157,13 +152,14 @@ $(document).ready(function() {
 				    .tickPadding(8);
 
 	var lineGenerator = d3.svg.line()
-	  .x(function(d) {
-	    return x(d.created_time);
-	  })
-	  .y(function(d) {
-	    return y(d.actual);
-	  })
-	  .interpolate("basis");
+				  .x(function(d) {
+				    return x(d.created_time);
+				  })
+				  .y(function(d) {
+				    return y(d.actual);
+				  })
+				  .interpolate("basis");
+
 
 	  var svg = d3.select('#penergy').append("svg")
 			    .attr('width', width)
@@ -210,13 +206,7 @@ $(document).ready(function() {
                         .attr('stroke', 'blue')
                         .attr('stroke-width', 7)
                         .attr('fill', '#bcddbc');
-
-	    // contain.append("svg:path")
-		   //      .datum(dataset)
-		   //      .attr("class", "line")
-		   //      .style("fill", "none")
-		   //  	.style("stroke", "blue")
-		   //      .attr("d", lineGenerator);
+         
 
 	function penergy(){
 
