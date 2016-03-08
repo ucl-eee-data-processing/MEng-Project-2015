@@ -160,26 +160,42 @@ $(document).ready(function() {
 				  })
 				  .interpolate("basis");
 
+	var lineGenerator2 = d3.svg.line()
+				  .x(function(d) {
+				    return x(d.created_time);
+				  })
+				  .y(function(d) {
+				    return y(d.predicted);
+				  })
+					.interpolate("basis");
+					//.interpolate("linear");
+
 
 	  var svg = d3.select('#penergy').append("svg")
 			    .attr('width', width)
 			    .attr('height', height)
 			  	.append('g')
 			    .attr('transform', 'translate(' + margins.left + ', ' + margins.top + ')');
+
+	// get the data from the given dataset
 	  dataset.forEach(function(d){
 	  	d.created_time = parseDate(d.created_time);
 	  	d.actual = +d.actual;
+	  	d.predicted = +d.predicted;
 	  });
 
-
-
+	// scale the range of the plot from the data
 	  x.domain(d3.extent(dataset, function(d) {
 	  	return d.created_time;
 	  }));
-	  y.domain(d3.extent(dataset, function(d) {
-	  	return d.actual;
-	  }));
-
+	  y.domain([0, d3.max(dataset, function(d) { return Math.max(d.actual, d.predicted); })]);
+	  
+	  // to be used later for single plots
+	  // y.domain(d3.extent(dataset, function(d) {
+	  // 	return d.actual;
+	  // }));
+		
+		// add x axis
 	   contain.append("svg:g")
           .attr("class", "axes")
           .attr("transform", "translate(0," + (height - margins.bottom) + ")")
@@ -190,6 +206,7 @@ $(document).ready(function() {
 	      .attr("dy", "-.55em")
 	      .attr("transform", "rotate(-90)" );
 
+	     // add y axis
     	contain.append("svg:g")
           .attr("class", "axes")
           .attr("transform", "translate(" + (margins.left) + ", 0)")
@@ -201,13 +218,19 @@ $(document).ready(function() {
           .style("color", "blue")
           .text("Actual value");
 
+          //add linegenerator line path
           svg.append('svg:path')
                         .attr('d', lineGenerator(dataset))
                         .attr('stroke', 'blue')
-                        .attr('stroke-width', 7)
+                        .attr('stroke-width', 4)
                         .attr('fill', '#bcddbc');
-         
 
+          //add linegenerator line path
+          svg.append('svg:path')
+                        .attr('d', lineGenerator2(dataset))
+                        .attr('stroke', '#3D95CE')
+                        .attr('stroke-width', 4)
+                        .attr('fill', 'red');
 	function penergy(){
 
 };
