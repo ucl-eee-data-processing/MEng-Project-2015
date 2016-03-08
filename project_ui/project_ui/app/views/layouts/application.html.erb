@@ -47,10 +47,16 @@
     <%= stylesheet_link_tag 'bootstrap.css', :rel =>'stylesheet'%>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'http://d3js.org/d3.v3.min.js' %>
   <%= javascript_include_tag 'http://maps.googleapis.com/maps/api/js' %>
+
+  <%= javascript_include_tag  'http://d3js.org/d3.v3.js', :charset => "utf-8" %>
+  <%= stylesheet_link_tag 'nv.d3.min.css', :rel => "stylesheet" %>
+  <%= javascript_include_tag 'nv.d3.min.js' %>
+  
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
+
 
    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
