@@ -141,6 +141,7 @@ $(document).ready(function() {
     var xAxis =  d3.svg.axis()
 				    .scale(x)
 				    .orient("bottom")
+				    .ticks(30)
 				    .tickFormat(d3.time.format("%d %b %H:%M %p"))
 				    .tickSize(0)
 				    .tickPadding(8);
@@ -148,6 +149,7 @@ $(document).ready(function() {
     var yAxis = d3.svg.axis()
 				    .scale(y)
 				    .orient('left')
+				    .ticks(22)
 				    .tickPadding(8);
 
 	var lineGenerator = d3.svg.line()
@@ -205,7 +207,8 @@ $(document).ready(function() {
           .style("text-anchor", "end")
 	      .attr("dx", "-.8em")
 	      .attr("dy", "-.55em")
-	      .attr("transform", "rotate(-90)" );
+	      .attr("transform", "rotate(-90)" )
+	      ;
 
 	     // add y axis
     	contain.append("svg:g")
@@ -217,7 +220,9 @@ $(document).ready(function() {
           .attr("y", 10)
           .attr("dy", "0.40em")
           .style("color", "blue")
-          .text("Actual value");
+          .text("Actual values");
+
+
 
           //add linegenerator line path
           svg.append('svg:path')
@@ -233,6 +238,7 @@ $(document).ready(function() {
                         .attr('stroke', '#3D95CE')
                         .attr('stroke-width', 4)
                         .attr('fill', 'red');
+
 	function penergy(){
 
 };
