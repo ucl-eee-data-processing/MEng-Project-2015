@@ -15,8 +15,6 @@
 //= require bootstrap
 //= require bootstrap.min 
 //= require turbolinks
-//= require d3
-//= require nv.d3
 //= require crossfilter
-//= require dc
 //= require_tree .
+

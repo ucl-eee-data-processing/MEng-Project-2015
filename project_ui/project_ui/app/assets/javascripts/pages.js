@@ -1,15 +1,4 @@
 $(document).ready(function() {
-	//set time frame to request data from the backend 
-	$("button").click(function() {
-	 var value = "'time_frame' : {" + "'start_time :'" + document.getElementById('start_time').value + 
-				 "," + "'end_time :'" + 
-				 document.getElementById('end_time').value + "}";
-	  	  console.log(value);
-	});
-
-	function penergy(){
-
-};
 
 var dataset2 = [
 	{
@@ -255,13 +244,14 @@ var total2 = dateDimen.group().reduceSum(function(d){return d.total; });
 var minDate = dateDimen.bottom(1)[0].date;
 var maxDate = dateDimen.top(1)[0].date;
 
-var hitslineChart = dc.lineChart("#chart-line-hitsperday");
 
-hitslineChart.width(650).height(250)
+//for homepage
+var homelineChart = dc.lineChart("#chart-home-hitsperday");
+	  	  homelineChart.width(700).height(300)
 			.dimension(dateDimen)
-			.group(actualHits, 'actual')
-			.stack(predictedHits, 'predicted')
-			.stack(total2, 'Abs. Diff.')
+			.group(actualHits, 'Recent Energy Consumption')
+			//.stack(predictedHits, 'predicted')
+			//.stack(total2, 'Abs. Diff.')
 			.renderArea(true)
 			.x(d3.time.scale().domain([minDate,maxDate]))
 			.renderHorizontalGridLines(true)
@@ -269,19 +259,86 @@ hitslineChart.width(650).height(250)
 			.legend(dc.legend().x(55).y(12).itemHeight(13).gap(5))
 			.brushOn(false)
 			.elasticX(true)
-			.yAxisLabel("Actual Energy")
+			.yAxisLabel("Actual Energy Consumption")
 			.margins({top:11, left:51, right:11, bottom:51})
 			.renderlet(function (chart) {chart.selectAll("g.x text").attr('dx', '-35').attr('dy', '-9').attr('transform', "rotate(-90)");});
-
-//computattion of pie chart for months
-var monthRingChart = dc.pieChart('#chart-ring-month');
+//piechart homepage
+var home_monthRingChart = dc.pieChart('#chart-home-month');
 var monthDim = ndx.dimension(function(d){return d.month; });
 var month_total = monthDim.group().reduceSum(function(d){return d.actual2; });
 
-monthRingChart.width(150).height(150)
+home_monthRingChart.width(150).height(150)
 				.dimension(monthDim)
 				.group(month_total)
-				.innerRadius(30);
+				.innerRadius(40);
+
+
+
+var home2lineChart = dc.lineChart("#chart-home2-hitsperday");
+home2lineChart.width(700).height(300)
+			.dimension(dateDimen)
+			.group(actualHits, 'Recent Stock Prices')
+			//.stack(predictedHits, 'predicted')
+			//.stack(total2, 'Abs. Diff.')
+			.renderArea(true)
+			.x(d3.time.scale().domain([minDate,maxDate]))
+			.renderHorizontalGridLines(true)
+			.renderVerticalGridLines(true)
+			.legend(dc.legend().x(55).y(12).itemHeight(13).gap(5))
+			.brushOn(false)
+			.elasticX(true)
+			.yAxisLabel("Actual Stock Fluctutation")
+			.margins({top:11, left:51, right:11, bottom:51})
+			.on("renderlet", function (chart) {chart.selectAll("g.x text").attr('dx', '-35').attr('dy', '-9').attr('transform', "rotate(-90)");});
+
+//computattion of pie chart for months
+var home2RingChart = dc.pieChart('#chart-home2-month');
+var monthDim = ndx.dimension(function(d){return d.month; });
+var month_total = monthDim.group().reduceSum(function(d){return d.actual2; });
+
+home2RingChart.width(150).height(150)
+				.dimension(monthDim)
+				.group(month_total)
+				.innerRadius(45);
+
+//end of homepage DC.JS javascript
+
+
+//set time frame to request data from the backend 
+window.datenow = function() {
+	// include a POST AJAX SESS HERE to end point
+	 var value = "'time_frame' : {" + "'start_time :'" + document.getElementById('start_time').value + 
+				 "," + "'end_time :'" + 
+				 document.getElementById('end_time').value + "}";
+	  	  console.log(value);
+	  };
+
+//computattion of pie chart for months
+// var monthRingChart = dc.pieChart('#chart-ring2-month');
+// var monthDim = ndx.dimension(function(d){return d.month; });
+// var month_total = monthDim.group().reduceSum(function(d){return d.actual2; });
+
+// 			monthRingChart.width(150).height(150)
+// 							.dimension(monthDim)
+// 							.group(month_total)
+// 							.innerRadius(30);
+
+
+
+// function penergy(){
+
+// };
+// function senergy(){
+
+// };
+// function sfinance(){
+
+// };
+// function pfinance(){
+
+// };
+
+
 
 dc.renderAll();
 

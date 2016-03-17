@@ -27,7 +27,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif;
-    line-height: 40px;
+    line-height: 25px;
 }
 
 h1 {
@@ -129,11 +129,6 @@ p {
     to {color: #000}
 }
 
-
-.img-margin-product {
-    margin-top: 30px;
-}
-
 .bottam-pad {
     padding-bottom: 40px;
 }
@@ -157,21 +152,6 @@ p {
     line-height: 65px;
     font-weight: 900;
 }
-
-.boxed{
-    position: relative;
-    padding: 30px;
-}
-
-.boxed a h2 {
-    width:280px;
-    height:50px;
-    text-align: center;
-    color: #000;
-    margin: 0 auto 14px auto;
-    border: 5px solid #bcddbc;
-}
-
 
 body > section {
   padding: 70px 0;
@@ -210,31 +190,12 @@ body > section {
   list-style: none; 
 }
 
-#contact-page{
-  padding-top: 0;
-}
-
-#contact-page .contact-form 
-.form-group label {
-  color: #4E4E4E;
-  font-size: 16px;
-  font-weight: 300;
-}
-
 .form-group .form-control {
   padding: 7px 12px;
   border-color:#f2f2f2;
   box-shadow: none;
 }
 
-textarea#message{
-  resize: none;
-  padding: 10px;
-}
-
-#contact-page .contact-wrap {
-  margin-top: 20px;
-}
 #contact-info{
   background: #fff url() no-repeat 90% 0;
   padding: 100px 0;
@@ -279,15 +240,55 @@ textarea#message{
     stroke: #777;
     shape-rendering: crispEdges;
 }
+.boxed{
+    position: relative;
+    padding: 30px;
+}
+
+.boxed a h2 {
+    width:280px;
+    height:50px;
+    text-align: center;
+    color: #000;
+    margin: 0 auto 14px auto;
+    border: 5px solid #bcddbc;
+}
+.boxed h3 {
+    width:280px;
+    height:50px;
+    text-align: center;
+    color: #000;
+    margin: 0 auto 14px auto;
+    border: 5px solid #bcddbc;
+}
+#h1_product{
+  color: #000000;
+  font-size: 64px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#h4_product{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
 .axes text {
     font-family: Lato;
     font-size: 14px;
 }
 
 .center-div{
-  margin: 0 auto;
-  max-width: 700px;
-
+  position: relative;
+  top: 50%;
+  left: 25%;
+}
+.center-divs{
+  position: relative;
+  top: 50%;
+  left: 18%;
+}
+.center-divv{
+  position: relative;
+  top: 50%;
+  left: 15%;
 }
 /* ==========================================================================
    About
@@ -318,9 +319,6 @@ background-color: #FFFFFF;
     position: relative;
 padding: 30px;
 }
-/* ==========================================================================
-   PRICE SECTION
-   ========================================================================== */
 
 
 /* ==========================================================================
@@ -476,106 +474,6 @@ input {
     display: block;
 }
 
-/*
-======================================
-LOGIN IN
-<!--
-Copyright (c) 2015 by Eric (http://codepen.io/ehermanson/pen/KwKWEv)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
--->
-======================================
-*/
-#login_pic{
-
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+27,7db9e8+27,7db9e8+66,7db9e8+66&1+0,1+0,1+0,0+100 */
-background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(125,185,232,0.73) 27%, rgba(125,185,232,0.34) 66%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(125,185,232,0.73) 27%,rgba(125,185,232,0.34) 66%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(125,185,232,0.73) 27%,rgba(125,185,232,0.34) 66%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
-
-}
-.form {
-  background: #4E63D1;
-  padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-}
-
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-}
-.tab-group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.tab-group li a {
-  display: block;
-  text-decoration: none;
-  padding: 15px;
-  background: rgba(160, 179, 176, 0.25);
-  color: #a0b3b0;
-  font-size: 20px;
-  float: left;
-  width: 50%;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-.tab-group li a:hover {
-  background: #179b77;
-  color: #ffffff;
-}
-.tab-group .active a {
-  background: #1ab188;
-  color: #ffffff;
-}
-
-.tab-content > div:last-child {
-  display: none;
-}
-
-
-/*label {
-  position: absolute;
-  -webkit-transform: translateY(6px);
-          transform: translateY(6px);
-  left: 13px;
-  color: rgba(255, 255, 255, 0.5);
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-  font-size: 22px;
-}
-label .req {
-  margin: 2px;
-  color: #1ab188;
-}
-
-label.active {
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-}
-label.active .req {
-  opacity: 0;
-}
-
-label.highlight {
-  color: #ffffff;
-}*/
 
 input, textarea {
   font-size: 22px;
@@ -644,10 +542,6 @@ textarea {
   width: 100%;
 }
 
-.forgot {
-  margin-top: -20px;
-  text-align: right;
-}
 
 /* ==========================================================================
    FOOTER SECTION
