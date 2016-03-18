@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html"; charset = "utf-8">  <!--for d3.js -->
+        <title> SmartDatabytes | Sentimental Analytics </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/data/images/icon.png">
+        <link rel = "https://cdnjs.cloudflare.com/ajax/libs/dc/1.7.5/dc.min.css">
+        <link rel="stylesheet" type="text/css" href="http://tvinci.github.io/webs/css/dc.css"/>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/data/stylesheets/pages.css">
+    </head>
+    <body>
+    <header>
+            <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/home"> <img src="/data/images/logo.png" type="image/png"></a>
+            </div>
+            <div class="navbar-collapse collapse" id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/home"> Home </a></li>
+                    <li><a href="/products"> Products </a>
+                    <ul>
+                        <li><a href="/product/predict_energy_path"> Predict Energy Usage </a></li>
+                        <li><a href="/product/predict_finance_path"> Stock Price Changes </a></li>
+                    </ul></li>
+                    <li><a href="/solutions"> Solutions </a>
+                    <ul>
+                        <li><a href="/solutions/solutions_energy_path"> Energy </a></li>
+                        <li><a href="/solutions/solutions_finance_path"> Finance </a></li>
+                    </ul></li>
+                    <li><a href="/about"> About </a></li>
+                    <li><a href="/contact"> Contact </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </header>
+
+    <!--> here is the start of the body of the solutions page<-->
+
+<div class="section">
+    <div class="container">
+        <div class="row main-low-margin text-center">
+            <div class="col-md-12 col-sm-3 text-center">
+                <h1 id="h1_product">OUR SOLUTIONS</h1>
+                <h4 id="h4_product">Currently, our products target datasets from the  financial <br /> industry and energy sector but with a flexible foundation for data infusion <br /> and to perform broader machine learning analysis in the future</h4>
+            </div>
+            <div class="container">
+                <svg width="300" height="300">
+                    <defs>
+                      <marker id="arrow2" markerWidth="13" markerHeight="10" refx="3" refy="6" orient="auto">
+                          <path d="M2,10 L2,10 L10,6 L2,2" style="fill:red;" />
+                      </marker>
+                      <marker id="arrow" markerWidth="13" markerHeight="10" refx="3" refy="6" orient="auto">
+                          <path d="M2,10 L2,10 L10,6 L2,2" style="fill:red;" />
+                      </marker>
+                    </defs>
+
+                    <path d="M240,77 L290,245"
+                          style="stroke:#bcddbc; stroke-width: 5.25px; fill: none;
+                          marker-end: url(#arrow);"
+                    />
+                    <path d="M145,77 L100,245"
+                          style="stroke:#bcddbc; stroke-width: 5.25px; fill: none;
+                          marker-end: url(#arrow2);"
+                    />
+                </svg>
+            </div class="container">
+
+            <div class="col-md-6 col-sm-6 text-center">
+                <h2>SmartDatabytes</h2>
+                <h2><b>ENERGY</b></h2>
+              <div class="boxed">
+                <a href="/solutions/solutions_energy_path"><h3>Energy Analytics</h3></a>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 text-center">
+            <h2>SmartDatabytes</h2>
+            <h2><b>Finance</b></h2>
+              <div class="boxed">
+                <a href="/solutions/solutions_finance_path"><h3>Finance Analytics</h3></a>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    <div class="space-bottom"></div>
+    <!--END ABOUT SECTION -->
+    <!--FOOTER SECTION -->
+
+    <div id="footer" class="footer navbar-fixed-bottom">
+        <div class="row"> 
+        <p>&copy; www.smartdatabytes.com 2016 <br/>All Rights Reserved!</p>     
+        </div>
+    </div>
+
+    <!--END FOOTER SECTION -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js" type="text/javascript"></script>
+        <!-- CORE BOOTSTRAP LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    </body>
+</html>

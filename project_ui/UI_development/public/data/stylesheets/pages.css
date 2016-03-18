@@ -1,0 +1,572 @@
+
+/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+   
+    ========================================================  */
+
+/* ===========================================================
+   GENERAL STYLESHEET BY BYINARY THEME    
+   ============================================================*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #000;
+    line-height: 35px;
+    font-weight: 400;
+    padding-bottom: 0px;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 40px;
+}
+
+h1 {
+    padding-top: 30px;
+    color: #000;
+    font-weight: 800;
+}
+
+h5 {
+    padding-bottom: 30px;
+}
+h4{
+    margin-top: 4px;
+}
+.text-center {
+    text-align: center;
+}
+
+.main-top-margin {
+    margin-top: 120px;
+}
+
+.main-low-margin {
+    margin-top: 55px;
+}
+
+a {
+  text-decoration: none;
+  color: #1ab188;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+a:hover {
+  color: #179b77;
+}
+
+p {
+    line-height: 30px;
+    margin-bottom: 23px;
+}
+
+.videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.videowrapper iframe,
+.videowrapper object,
+.videowrapper #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#parent{
+    position: relative;
+}
+
+#overlay {
+    text-align: center;
+    z-index: 50;
+    background: transparent;
+}
+
+#overlay h2 {
+    font-weight: bold;
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -14% 0 0 -6%;
+    animation: change 5s step-end both;
+}
+#overlay h1 {
+    font-weight: bold;
+    font-size: 42px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -14% 0 0 -13%;
+    animation: change 5s step-end both;
+}
+#overlay h4 {
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -9% 0 0 -13%;
+    animation: change 5s step-end both
+}
+#overlay a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 15% 0 0 -20%;
+    animation: change 5s step-end both
+}
+
+@keyframes change{
+    from {color: #fff}
+    to {color: #000}
+}
+
+.bottam-pad {
+    padding-bottom: 40px;
+}
+
+.space-bottom {
+    height: 120px;
+}
+
+.space-top {
+    height: 70px;
+}
+
+.main-icon {
+    font-size: 350px;
+    color: rgba(102, 110, 197, 1);
+}
+
+.head-line {
+    font-size: 70px;
+    padding-bottom: 50px;
+    line-height: 65px;
+    font-weight: 900;
+}
+
+body > section {
+  padding: 70px 0;
+}
+
+/*************************
+********* Contact Us CSS ******
+**************************/
+
+.gmap-area {
+  background-image: url("/data/images/blurredMap.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 0;
+}
+
+.gmap-area .gmap iframe {
+  border-radius: 50%;
+  height: 380px;
+  width: 400px;
+}
+
+.gmap{
+    border: 10px solid #f6f5f0;
+    border-radius: 50%;
+    height: 400px;
+    width: 400px;
+    box-shadow: 0px 0px 3px 3px #e7e4dc;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.gmap-area .map-content ul {
+  list-style: none; 
+}
+
+.form-group .form-control {
+  padding: 7px 12px;
+  border-color:#f2f2f2;
+  box-shadow: none;
+}
+
+#contact-info{
+  background: #fff url() no-repeat 90% 0;
+  padding: 100px 0;
+}
+
+#contact-info i{
+  width: 60px;
+  height: 60px;
+  font-size: 40px;
+  line-height: 40px;
+  color: #fff;
+  background: #000;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#contact-info h2{
+  margin-top: 0;
+  color: #000;
+}
+
+#contact-info{
+  color:#000;
+}
+
+.center h2{
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: bold;
+}
+.center {
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+/* ==========================================================================
+   d3.js CSS
+   ========================================================================== */
+.axes path {
+    fill: none;
+    stroke: #777;
+    shape-rendering: crispEdges;
+}
+.boxed{
+    position: relative;
+    padding: 30px;
+}
+
+.boxed a h2 {
+    width:280px;
+    height:50px;
+    text-align: center;
+    color: #000;
+    margin: 0 auto 14px auto;
+    border: 5px solid #bcddbc;
+}
+.boxed h3 {
+    width:280px;
+    height:50px;
+    text-align: center;
+    color: #000;
+    margin: 0 auto 14px auto;
+    border: 5px solid #bcddbc;
+}
+#h1_product{
+  color: #000000;
+  font-size: 64px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#h4_product{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.axes text {
+    font-family: Lato;
+    font-size: 14px;
+}
+
+.center-div{
+  position: relative;
+  top: 50%;
+  left: 25%;
+}
+.center-divs{
+  position: relative;
+  top: 50%;
+  left: 18%;
+}
+.center-divv{
+  position: relative;
+  top: 50%;
+  left: 15%;
+}
+/* ==========================================================================
+   About
+   ========================================================================== */
+#about_pic{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+27,7db9e8+27,7db9e8+66,7db9e8+66&1+0,1+0,1+0,0+100 */
+background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(125,185,232,0.73) 27%, rgba(125,185,232,0.34) 66%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(125,185,232,0.73) 27%,rgba(125,185,232,0.34) 66%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(125,185,232,0.73) 27%,rgba(125,185,232,0.34) 66%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+
+
+}
+#about_pic h2{
+    text-align: center;
+    font-weight: bold;
+}
+
+.circle-body {
+ width: 140px;
+height: 140px;
+margin: 0 auto 14px auto;
+border: 5px solid #bcddbc;
+border-radius: 100%;
+background-color: #FFFFFF;
+}
+.icon-set {
+    position: relative;
+padding: 30px;
+}
+
+
+/* ==========================================================================
+   Landing Page SECTION
+   ========================================================================== */
+table {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#time th.header{
+  padding-bottom:25px;
+  vertical-align: middle;
+}
+
+input {
+  color: #888;
+  width: calc(100% - 4em - 5px);
+  font-family: sans-serif;
+}
+
+.myButton {
+  -moz-box-shadow: 0px 10px 14px -7px #3e7327;
+  -webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77b55a), color-stop(1, #72b352));
+  background:-moz-linear-gradient(top, #77b55a 5%, #72b352 100%);
+  background:-webkit-linear-gradient(top, #77b55a 5%, #72b352 100%);
+  background:-o-linear-gradient(top, #77b55a 5%, #72b352 100%);
+  background:-ms-linear-gradient(top, #77b55a 5%, #72b352 100%);
+  background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+  background-color:#77b55a;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  border:1px solid #4b8f29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:13px;
+  font-weight:bold;
+  padding:6px 12px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #5b8a3c;
+}
+.myButton:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, #77b55a));
+  background:-moz-linear-gradient(top, #72b352 5%, #77b55a 100%);
+  background:-webkit-linear-gradient(top, #72b352 5%, #77b55a 100%);
+  background:-o-linear-gradient(top, #72b352 5%, #77b55a 100%);
+  background:-ms-linear-gradient(top, #72b352 5%, #77b55a 100%);
+  background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
+  background-color:#72b352;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+/* ===========================================================
+   BOOTSTRAP ELEMENTS CHANGES   
+   ============================================================*/
+.navbar {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.navbar-inverse {
+    background: #bcddbc;
+    border-color: #000;
+}
+
+    .navbar-inverse .navbar-nav > .active > a {
+        background: #000;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: #000;
+        font-weight: bolder;
+        font-size: 25px;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+
+    .navbar-inverse :hover .navbar-brand:hover {
+        color: #000;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #000;
+    }
+
+
+
+#menu ul {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+}
+
+#menu ul a {
+    display: block;
+    text-decoration: none;
+}
+
+#menu ul li {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li.current-menu-item {
+    background: #fff;
+}
+
+#menu ul li:hover {
+    background: #bcddbc;
+}
+
+#menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background:#fff;
+    padding: 0;
+}
+
+#menu ul ul li {
+    float: none;
+    width:200px;
+}
+
+#menu ul ul a {
+    line-height: 120%;
+    padding: 10px 10px;
+}
+
+#menu ul ul ul {
+    top: 0;
+    left: 100%;
+}
+
+#menu ul li:hover > ul {
+    display: block;
+}
+
+
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #000;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1ab188;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #179b77;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+
+
+#footer {
+    background-color: #bcddbc;
+    color: #000;
+    text-align: center;
+    padding: 7px;
+    width: 100%;
+    vertical-align: middle;
+    height:100px;
+    bottom:0;
+    left:0;
+}
