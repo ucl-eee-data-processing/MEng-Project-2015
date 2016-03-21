@@ -324,7 +324,8 @@ window.datenow = function() {
 // 							.innerRadius(30);
 
 
-// function penergy(){
+
+// function penergy(){ browserify main.js -o bundle.js
 
 // };
 // function senergy(){
