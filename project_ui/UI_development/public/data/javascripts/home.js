@@ -324,7 +324,6 @@ window.datenow = function() {
 // 							.innerRadius(30);
 
 
-
 // function penergy(){
 
 // };

@@ -95,6 +95,19 @@
             </div>
 
         </div>
+
+        <div class="row">
+            <h2 class="text-center">London, UK</h2>
+            <div class="col-sm-6">
+                <h3>Current Conditions</h3>
+                <h4 id="current"></h4>
+            </div>
+            <div class="col-sm-6">
+                <h3>Forecast</h3>
+                <h4 id="forecast"></h4>
+            </div>
+        </div>
+
     </div>
 
     <div class="space-bottom"></div>
@@ -110,7 +123,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js" type="text/javascript"></script>
         <!-- CORE BOOTSTRAP LIBRARY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sugar/1.4.1/sugar-full.min.js"></script>
+    <script type="text/javascript" src="/data/javascripts/weather.js"></script>
+    <script>
+       // var Weather;
+         Weather.getCurrent( "Guntersville", function( current ) {
+            $( "#current" ).html( "Temperature: " + current.temperature() + "&deg;K or " +
+                Weather.kelvinToFahrenheit( current.temperature() ) + "&deg;F or " +
+                Weather.kelvinToCelsius( current.temperature() ) + "&deg;C" +
+                "<br />Current Conditions: " + current.conditions() );
+        });
+        Weather.getForecast( "Guntersville", function ( forecast ) {
+            $( "#forecast" ).html( "High: " + forecast.high() + "&deg;K or " +
+                Weather.kelvinToFahrenheit( forecast.high() ) + "&deg;F or " +
+                Weather.kelvinToCelsius( forecast.high() ) + "&deg;C<br />Low: " +
+                forecast.low() + "&deg;K or " +
+                Weather.kelvinToFahrenheit( forecast.low() ) + "&deg;F or " +
+                Weather.kelvinToCelsius( forecast.low() ) + "&deg;C" );
+        });
+    </script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.js"></script>
+
 	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script src="http://maps.googleapis.com/maps/api/js" charset="utf-8"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/dc/1.7.5/dc.min.js"></script>
