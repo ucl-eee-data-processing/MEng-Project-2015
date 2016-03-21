@@ -3,17 +3,10 @@ var app = express();
 var morgan = require('morgan');
 var parser = require('json-parser');
 
-//var mongojs = require('mongojs');
-//var db = mongojs('weather_data', ['weather_data']);
-
-// first one requires mongojs module and 2nd one says which collection we'll be using
-var bodyParser = require('body-parser');// body parser to get user interaction usingnpm package
+\var bodyParser = require('body-parser');// body parser to get user interaction usingnpm package
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
-
-//app.use(morgan('dev'));
-
 
 
 app.get('/home', function (req, res){
