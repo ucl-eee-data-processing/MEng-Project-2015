@@ -127,18 +127,13 @@
     <script type="text/javascript" src="/data/javascripts/weather.js"></script>
     <script>
        // var Weather;
-         Weather.getCurrent( "Guntersville", function( current ) {
-            $( "#current" ).html( "Temperature: " + current.temperature() + "&deg;K or " +
-                Weather.kelvinToFahrenheit( current.temperature() ) + "&deg;F or " +
-                Weather.kelvinToCelsius( current.temperature() ) + "&deg;C" +
+         Weather.getCurrent( "London", function( current ) {
+            $( "#current" ).html( "Temperature: " + Weather.kelvinToCelsius( current.temperature() ) + "&deg;C" +
                 "<br />Current Conditions: " + current.conditions() );
         });
-        Weather.getForecast( "Guntersville", function ( forecast ) {
-            $( "#forecast" ).html( "High: " + forecast.high() + "&deg;K or " +
-                Weather.kelvinToFahrenheit( forecast.high() ) + "&deg;F or " +
+        Weather.getForecast( "London", function ( forecast ) {
+            $( "#forecast" ).html( "High: " + forecast.high() + 
                 Weather.kelvinToCelsius( forecast.high() ) + "&deg;C<br />Low: " +
-                forecast.low() + "&deg;K or " +
-                Weather.kelvinToFahrenheit( forecast.low() ) + "&deg;F or " +
                 Weather.kelvinToCelsius( forecast.low() ) + "&deg;C" );
         });
     </script>
