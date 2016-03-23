@@ -70,17 +70,27 @@ p {
     line-height: 30px;
     margin-bottom: 23px;
 }
+/* background video css*/
+#vid_frame{
+  position: relative;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  background-size: cover;
+}
 
 .videowrapper {
     float: none;
     clear: both;
     width: 100%;
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
+    max-height: 900px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-bottom: 5%;
+    padding-top: 5px;
 }
-
 .videowrapper iframe,
 .videowrapper object,
 .videowrapper #overlay {
@@ -107,8 +117,8 @@ p {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -14% 0 0 -6%;
-    animation: change 5s step-end both;
+    margin: -9% 0 0 -6%;
+    animation: change 3s step-end both;
 }
 #overlay h1 {
     font-weight: bold;
@@ -116,23 +126,23 @@ p {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -14% 0 0 -13%;
-    animation: change 5s step-end both;
+    margin: -8% 0 0 -13%;
+    animation: change 3s step-end both;
 }
 #overlay h4 {
     font-weight: bold;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -9% 0 0 -13%;
-    animation: change 5s step-end both
+    margin: -4% 0 0 -13%;
+    animation: change 3s step-end both
 }
 #overlay a {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: 15% 0 0 -20%;
-    animation: change 5s step-end both
+    margin: 19% 0 0 -20%;
+    animation: change 3s step-end both
 }
 
 @keyframes change{

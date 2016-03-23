@@ -3,7 +3,7 @@ var app = express();
 var morgan = require('morgan');
 var parser = require('json-parser');
 
-\var bodyParser = require('body-parser');// body parser to get user interaction usingnpm package
+var bodyParser = require('body-parser');// body parser to get user interaction usingnpm package
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
@@ -25,9 +25,9 @@ app.get('/product/predict_energy_path', function (req, res){
 	console.log('i received a GET request')
 	res.sendFile('views/penergy.html', {root: __dirname});
 	});
-app.get('/product/predict_finance_path', function (req, res){
+app.get('/product/error_path', function (req, res){
 	console.log('i received a GET request')
-	res.sendFile('views/pfinance.html', {root: __dirname});
+	res.sendFile('views/error_path.html', {root: __dirname});
 	});
 app.get('/solutions', function (req, res){
 	console.log('i received a GET request')

@@ -34,13 +34,13 @@
                 	<li><a href="/products"> Products </a>
                 	<ul>
                 		<li><a href="/product/predict_energy_path"> Predict Energy Usage </a></li>
-                		<li><a href="/product/predict_finance_path"> Stock Price Changes </a></li>
+                		<li><a href="/product/error_path"> Error </a></li>
                 	</ul></li>
-                	<li><a href="/solutions"> Solutions </a>
+                	<!--li><a href="/solutions"> Solutions </a>
                 	<ul>
                 		<li><a href="/solutions/solutions_energy_path"> Energy </a></li>
                 		<li><a href="/solutions/solutions_finance_path"> Finance </a></li>
-                	</ul></li>
+                	</ul></li-->
                 	<li><a href="/about"> About </a></li>
                 	<li><a href="/contact"> Contact </a></li>
                 </ul>
@@ -51,12 +51,13 @@
 
 <!--> here is the start of the body of the main page<-->
 	<div class="videowrapper" id="parent">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/nqGQJkhb6qg?wmode=opaque&amp;rel=0&amp;start=16&amp;autoplay=1&amp;loop=1&amp;playlist=nqGQJkhb6qg&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+           <video autoplay loop muted id="vid_frame">
+                <source src="./project_vid.mp4" type="video/mp4"/>
+           </video>
         <div id="overlay">
                         <h2> BIG DATA</h2> <h1>PROCESSING PIPELINE</h1> 
-                        <h4>We perform sentimental analysis on your choice of data 
-                            <br /> so as to gain interesting insights from your diverse 
-                            <br/> range of datasets <br />
+                        <h4> <br /> We perform sentimental analysis on your choice 
+                            <br/> &amp; range of datasets <br />
                             <a href="/about"><i class="fa fa-hand-o-right fa-2x">See More</i></a>
                         </h4>
         </div>
@@ -83,14 +84,14 @@
 
         <div class="row main-low-margin text-center">
             <div>
-                <div class="circle-body"><i class="fa fa-area-chart fa-5x  icon-set"></i></div>
-                <h3>STOCK PRICE CHANGES</h3>
+                <div class="circle-body"><i class="fa fa-exclamation-triangle fa-5x  icon-set"></i></div>
+                <h3>Error Plot</h3>
                 <p>
-                    SmartDatabytes enables you to choose a desired stock price of a tech giants like Google, Apple, Facebook, Twitter.. &amp; perform sentimental analysis of the frequency of good / bad news with respect to time to changes in each companies fluctuation in share price
+                    Shows the current level of error based on the collected data
                 </p>
                 <div class="center-divv" id="chart-home2-month"></div> 
                 <div class="center-divs" id="chart-home2-hitsperday"></div>
-                <a href="/product/predict_finance_path"> <h3>Predict Future Stock Price </h3></a>
+                <a href="/product/error_path"> <h3>View Change in Error With Time </h3></a>
 
             </div>
 
