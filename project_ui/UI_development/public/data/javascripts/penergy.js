@@ -1,222 +1,221 @@
-$(document).ready(function() {
 
 var dataset = [
 	{
-		"created_time":"01/01/2015 12:30",
+		"created_time":"2015-01-01T12:30",
 		"actual": 337.7,
 		"predicted": 506.8629090622853
 	},
 	{
-		"created_time":"02/01/2015 12:30",
+		"created_time":"2015-01-02T12:30",
 		"actual": 544.13,
 		"predicted": 513.7654045324598,
 	},
 	{
-		"created_time":"03/01/2015 12:30",
+		"created_time":"2015-01-03T12:30",
 		"actual": 612.94,
 		"predicted": 534.4728909430123
 	},{
-		"created_time":"04/01/2015 12:30",
+		"created_time":"2015-01-04T12:30",
 		"actual": 621.67,
 		"predicted": 541.3753864131868
 	},
 	{
-		"created_time":"05/01/2015 12:30",
+		"created_time":"2015-01-05T12:30",
 		"actual": 673.02,
 		"predicted": 548.2778818833758
 	},
 	{
-		"created_time":"06/01/2015 12:30",
+		"created_time":"2015-01-06T12:30",
 		"actual": 550.32,
 		"predicted": 555.1803773535503
 	},
 	{
-		"created_time":"07/01/2015 12:30",
+		"created_time":"2015-01-07T12:30",
 		"actual": 516.51,
 		"predicted": 562.0828728237248
 	},
 	{
-		"created_time":"08/01/2015 12:30",
+		"created_time":"2015-01-08T12:30",
 		"actual": 481.43,
 		"predicted": 582.7903592342773
 	},
 	{
-		"created_time":"9/01/2015 12:30",
+		"created_time":"2015-01-09T12:30",
 		"actual": 440.08,
 		"predicted": 589.6928547044517
 	},
 	{
-		"created_time":"10/01/2015 12:30",
+		"created_time":"2015-01-10T12:30",
 		"actual": 601.67,
 		"predicted": 596.5953501746408
 	},
 	{
-		"created_time":"12/01/2015 12:30",
+		"created_time":"2015-01-12T12:30",
 		"actual": 561.59,
 		"predicted": 603.4978456448152
 	},{
-		"created_time":"16/01/2015 12:30",
+		"created_time":"2015-01-16T12:30",
 		"actual": 602.94,
 		"predicted": 610.4003411149897
 	},
 	{
-		"created_time": "19/01/2015 12:30",
+		"created_time": "2015-01-19T12:30",
 		"actual": 695.56,
 		"predicted": 631.1078275255422
 	},
 	{
-		"created_time":"20/01/2015 12:30",
+		"created_time":"2015-01-20T12:30",
 		"actual": 721.83,
 		"predicted": 638.0103229957167
 	},
 	 {
-	 	"created_time" : "21/01/2015 12:30",
+	 	"created_time" : "2015-01-21T12:30",
 		"actual": 783.18,
 		"predicted": 644.9128184659057
 	},
 	{
-		"created_time":"22/01/2015 12:30",
+		"created_time":"2015-01-22T12:30",
 		"actual": 716.83,
 		"predicted": 651.8153139360802
 	},
 	{
-		"created_time":"23/01/2015 12:30",
+		"created_time":"2015-01-23T12:30",
 		"actual": 734.37,
 		"predicted": 658.7178094062692
 	},
 	{
-		"created_time":"26/01/2015 12:30",
+		"created_time":"2015-01-26T12:30",
 		"actual": 650.48,
 		"predicted": 679.4252958168072
 	},
 	{
-		"created_time":"27/01/2015 12:30",
+		"created_time":"2015-01-27T12:30",
 		"actual": 584.13,
 		"predicted": 686.3277912869817
 	},
 	{
-		"created_time":"28/01/2015 12:30",
+		"created_time":"2015-01-28T12:30",
 		"actual": 679.29,
 		"predicted": 693.2302867571707
 	},
 	{
-		"created_time":"29/01/2015 12:30",
+		"created_time":"2015-01-29T12:30",
 		"actual": 690.56,
 		"predicted": 700.1327822273452
 	},{
-		"created_time":"30/01/2015 12:30",
+		"created_time":"2015-01-30T12:30",
 		"actual": 635.48,
 		"predicted": 707.0352776975342
 	},
 	{
-		"created_time": "01/02/2015 12:30",
+		"created_time": "2015-02-01T12:30",
 		"actual": 695.56,
 		"predicted": 631.1078275255422
 	},
 	{
-		"created_time":"02/02/2015 12:30",
+		"created_time":"2015-02-02T12:30",
 		"actual": 721.83,
 		"predicted": 638.0103229957167
 	},
 	 {
-	 	"created_time" : "03/02/2015 12:30",
+	 	"created_time" : "2015-02-03T12:30",
 		"actual": 783.18,
 		"predicted": 644.9128184659057
 	},
 	{
-		"created_time":"04/02/2015 12:30",
+		"created_time":"2015-02-04T12:30",
 		"actual": 716.83,
 		"predicted": 651.8153139360802
 	},
 	{
-		"created_time":"05/02/2015 12:30",
+		"created_time":"2015-02-05T12:30",
 		"actual": 734.37,
 		"predicted": 658.7178094062692
 	},
 	{
-		"created_time":"06/02/2015 12:30",
+		"created_time":"2015-02-06T12:30",
 		"actual": 650.48,
 		"predicted": 679.4252958168072
 	},
 	{
-		"created_time":"07/02/2015 12:30",
+		"created_time":"2015-02-07T12:30",
 		"actual": 584.13,
 		"predicted": 686.3277912869817
 	},
 	{
-		"created_time":"08/02/2015 12:30",
+		"created_time":"2015-02-08T12:30",
 		"actual": 679.29,
 		"predicted": 693.2302867571707
 	},
 	{
-		"created_time":"09/02/2015 12:30",
+		"created_time":"2015-02-09T12:30",
 		"actual": 690.56,
 		"predicted": 700.1327822273452
 	},{
-		"created_time":"10/02/2015 12:30",
+		"created_time":"2015-02-10T12:30",
 		"actual": 635.48,
 		"predicted": 707.0352776975342
 	},
 	{
-		"created_time":"10/01/2015 12:30",
+		"created_time":"2015-02-11T12:30",
 		"actual": 601.67,
 		"predicted": 596.5953501746408
 	},
 	{
-		"created_time":"12/02/2015 12:30",
+		"created_time":"2015-02-12T12:30",
 		"actual": 561.59,
 		"predicted": 603.4978456448152
 	},{
-		"created_time":"16/02/2015 12:30",
+		"created_time":"2015-02-16T12:30",
 		"actual": 602.94,
 		"predicted": 610.4003411149897
 	},
 	{
-		"created_time": "19/02/2015 12:30",
+		"created_time": "2015-02-19T12:30",
 		"actual": 695.56,
 		"predicted": 631.1078275255422
 	},
 	{
-		"created_time":"20/02/2015 12:30",
+		"created_time":"2015-02-20T12:30",
 		"actual": 721.83,
 		"predicted": 638.0103229957167
 	},
 	 {
-	 	"created_time" : "21/02/2015 12:30",
+	 	"created_time" : "2015-02-21T12:30",
 		"actual": 783.18,
 		"predicted": 644.9128184659057
 	},
 	{
-		"created_time":"22/02/2015 12:30",
+		"created_time":"2015-02-22T12:30",
 		"actual": 716.83,
 		"predicted": 651.8153139360802
 	},
 	{
-		"created_time":"23/02/2015 12:30",
+		"created_time":"2015-02-23T12:30",
 		"actual": 734.37,
 		"predicted": 658.7178094062692
 	},
 	{
-		"created_time":"26/02/2015 12:30",
+		"created_time":"2015-02-26T12:30",
 		"actual": 650.48,
 		"predicted": 679.4252958168072
 	},
 	{
-		"created_time":"27/02/2015 12:30",
+		"created_time":"2015-02-27T12:30",
 		"actual": 584.13,
 		"predicted": 686.3277912869817
 	},
 	{
-		"created_time":"28/02/2015 12:30",
+		"created_time":"2015-02-28T12:30",
 		"actual": 679.29,
 		"predicted": 693.2302867571707
 	},
 	{
-		"created_time":"29/02/2015 12:30",
+		"created_time":"2015-02-29T12:30",
 		"actual": 690.56,
 		"predicted": 700.1327822273452
 	},{
-		"created_time":"30/02/2015 12:30",
+		"created_time":"2015-02-30T12:30",
 		"actual": 635.48,
 		"predicted": 707.0352776975342
 	}
@@ -227,7 +226,7 @@ var ndx = crossfilter(dataset);
 
 var actual2 = ndx.dimension(function(d){return d.actual; });
 
-var parseDate2 = d3.time.format("%d/%m/%Y %H:%M").parse;
+var parseDate2 = d3.time.format("%Y-%m-%dT%H:%M").parse;
 
 dataset.forEach(function(d){
 	d.date = parseDate2(d.created_time);
@@ -245,14 +244,48 @@ var minDate = dateDimen.bottom(1)[0].date;
 var maxDate = dateDimen.top(1)[0].date;
 
 
-//set time frame to request data from the backend 
-window.datenow = function() {
-	// include a POST AJAX SESS HERE to end point
-	 var value = "'time_frame' : {" + "'start_time :'" + document.getElementById('start_time').value + 
-				 "," + "'end_time :'" + 
-				 document.getElementById('end_time').value + "}";
-	  	  console.log(value);
-	  };
+window.datenow = function () {
+            $.ajax({
+                url: "/customers",
+                    // the URL for the request
+                type: "GET",
+                    // whether this is a POST or GET request
+                dataType: "json",
+                    // the type of data we expect back
+                success: function (response) {
+                    // code to run if the request succeeds; parameter = response
+                    console.log(response)
+                },
+                error: function (xhr, status) {
+                    // code run if request fails; raw request and status
+                    console.log("Sorry, there was a problem!");
+                },
+                complete: function (xhr, status) {  	// code to run regardless of success or failure
+                    console.log("The request is complete!");
+                }
+            })
+        };
+
+
+// //set time frame to request data from the backend 
+// window.datenow = function() {
+// 	// include a POST AJAX SESS HERE to end point
+// 	 // var value = "/predict/"+document.getElementById('start_time').value+ 
+// 		// 		 "/"+document.getElementById('end_time').value;
+// 	 //  	  console.log(value);
+// 	 $.ajax({
+// 	 	url:'/get/data',
+// 	 	type: 'GET',
+// 	 	dataType: "json",
+// 	 	sucess: function(result){
+// 	 		console.log("got result on client side");
+// 	 	},
+// 	 	error:function(){
+// 	 		console.log("error in the process");
+// 	 	}
+
+// 	 });
+// 	  };
 
 // start of dc.js js sccript for predicting energy
 
@@ -287,4 +320,3 @@ prod_monthRingChart.width(150).height(150)
 dc.renderAll();
 
 
-});

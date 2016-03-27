@@ -9,11 +9,14 @@
     "csv": "^0.4.6",
     "csvtojson": "^0.5.2",
     "express": "^4.13.4",
+    "http": "0.0.0",
+    "jquery": "^2.2.2",
     "json-parse": "^1.0.3",
     "json-parser": "^1.1.5",
     "mocha": "^1.21.5",
     "morgan": "^1.7.0",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "util": "^0.10.3"
   },
   "devDependencies": {
     "mocha": "^1.16.2"
