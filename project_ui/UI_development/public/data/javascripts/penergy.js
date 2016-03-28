@@ -244,14 +244,44 @@ var minDate = dateDimen.bottom(1)[0].date;
 var maxDate = dateDimen.top(1)[0].date;
 
 
-window.datenow = function () {
+// window.datenow = function () {
+//             $.ajax({
+//                 url: "/customers",
+//                     // the URL for the request
+//                 type: "GET",
+//                     // whether this is a POST or GET request
+//                 dataType: "json",
+//                     // the type of data we expect back
+//                 success: function (response) {
+//                     // code to run if the request succeeds; parameter = response
+//                     console.log(response)
+//                 },
+//                 error: function (xhr, status) {
+//                     // code run if request fails; raw request and status
+//                     console.log("Sorry, there was a problem!");
+//                 },
+//                 complete: function (xhr, status) {  	// code to run regardless of success or failure
+//                     console.log("The request is complete!");
+//                 }
+//             })
+//         };
+
+
+//set time frame to request data from the backend 
+window.datenow = function() {
+	//include a POST AJAX SESS HERE to end point
+	 // var value = document.getElementById('start_time').value+ 
+		// 		 "/"+document.getElementById('end_time').value;
+	  	  //console.log(value);
             $.ajax({
-                url: "/customers",
+                url: "/predict",
                     // the URL for the request
                 type: "GET",
                     // whether this is a POST or GET request
                 dataType: "json",
                     // the type of data we expect back
+                data : {'start_time' : document.getElementById('start_time').value, 'end_time' : document.getElementById('end_time').value},
+
                 success: function (response) {
                     // code to run if the request succeeds; parameter = response
                     console.log(response)
@@ -264,28 +294,7 @@ window.datenow = function () {
                     console.log("The request is complete!");
                 }
             })
-        };
-
-
-// //set time frame to request data from the backend 
-// window.datenow = function() {
-// 	// include a POST AJAX SESS HERE to end point
-// 	 // var value = "/predict/"+document.getElementById('start_time').value+ 
-// 		// 		 "/"+document.getElementById('end_time').value;
-// 	 //  	  console.log(value);
-// 	 $.ajax({
-// 	 	url:'/get/data',
-// 	 	type: 'GET',
-// 	 	dataType: "json",
-// 	 	sucess: function(result){
-// 	 		console.log("got result on client side");
-// 	 	},
-// 	 	error:function(){
-// 	 		console.log("error in the process");
-// 	 	}
-
-// 	 });
-// 	  };
+	  };
 
 // start of dc.js js sccript for predicting energy
 
