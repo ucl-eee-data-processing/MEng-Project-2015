@@ -240,6 +240,7 @@ window.datenow = function() {
                     //get the key for each response
                     for(key in Object.keys(obj)) {
                     	var val = Object.keys(obj)[key];
+                    	window.val; // global variable for d3 plot
                     	console.log(val);
 					};
 
@@ -247,6 +248,7 @@ window.datenow = function() {
                     for(key in obj) {
 					    if(obj.hasOwnProperty(key)) {
 					        var value = obj[key];
+					        window.value; // global variable for d3 plot
 					        console.log(value);
 					    }
 					};
