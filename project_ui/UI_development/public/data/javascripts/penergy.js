@@ -221,6 +221,45 @@ var dataset = [
 	}
 ];
 
+//set time frame to request data from the backend 
+window.datenow = function() {
+	//include a GET AJAX HERE to the end point
+            $.ajax({
+                url: "/predict",
+                    //URL for the request
+                type: "GET",
+                    // this is a GET request
+                dataType: "json",
+                    // data we expect back
+                data : {'start_time' : document.getElementById('start_time').value, 'end_time' : document.getElementById('end_time').value},
+                success: function (response) {
+                    // print out the data we get back
+                    console.log(response);
+                    var obj = jQuery.parseJSON(response);
+
+                    //get the key for each response
+                    for(key in Object.keys(obj)) {
+                    	var val = Object.keys(obj)[key];
+                    	console.log(val);
+					};
+
+					//get the value for each response
+                    for(key in obj) {
+					    if(obj.hasOwnProperty(key)) {
+					        var value = obj[key];
+					        console.log(value);
+					    }
+					};
+                },
+                error: function (xhr, status) {
+                    // if request fails print out this
+                    console.log("Sorry, there is a problem!");
+                },
+                complete: function (xhr, status) { // code to runs if yay or nay
+                    console.log("The request is now complete!");
+                }
+            })
+	  };
 
 var ndx = crossfilter(dataset);
 
@@ -242,59 +281,6 @@ var total2 = dateDimen.group().reduceSum(function(d){return d.total; });
 
 var minDate = dateDimen.bottom(1)[0].date;
 var maxDate = dateDimen.top(1)[0].date;
-
-
-// window.datenow = function () {
-//             $.ajax({
-//                 url: "/customers",
-//                     // the URL for the request
-//                 type: "GET",
-//                     // whether this is a POST or GET request
-//                 dataType: "json",
-//                     // the type of data we expect back
-//                 success: function (response) {
-//                     // code to run if the request succeeds; parameter = response
-//                     console.log(response)
-//                 },
-//                 error: function (xhr, status) {
-//                     // code run if request fails; raw request and status
-//                     console.log("Sorry, there was a problem!");
-//                 },
-//                 complete: function (xhr, status) {  	// code to run regardless of success or failure
-//                     console.log("The request is complete!");
-//                 }
-//             })
-//         };
-
-
-//set time frame to request data from the backend 
-window.datenow = function() {
-	//include a POST AJAX SESS HERE to end point
-	 // var value = document.getElementById('start_time').value+ 
-		// 		 "/"+document.getElementById('end_time').value;
-	  	  //console.log(value);
-            $.ajax({
-                url: "/predict",
-                    // the URL for the request
-                type: "GET",
-                    // whether this is a POST or GET request
-                dataType: "json",
-                    // the type of data we expect back
-                data : {'start_time' : document.getElementById('start_time').value, 'end_time' : document.getElementById('end_time').value},
-
-                success: function (response) {
-                    // code to run if the request succeeds; parameter = response
-                    console.log(response)
-                },
-                error: function (xhr, status) {
-                    // code run if request fails; raw request and status
-                    console.log("Sorry, there was a problem!");
-                },
-                complete: function (xhr, status) {  	// code to run regardless of success or failure
-                    console.log("The request is complete!");
-                }
-            })
-	  };
 
 // start of dc.js js sccript for predicting energy
 

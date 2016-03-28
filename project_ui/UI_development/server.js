@@ -13,6 +13,8 @@ app.use(bodyParser.json());
 
    // api call
     app.get('/predict', function(req, res){
+    	console.log(req.query.start_time);
+    	console.log(req.query.end_time);
     	request('http://rodrig-2.ee.ucl.ac.uk:8080/predict/' + req.query.start_time + '/' + req.query.end_time, function (error, response, body){
     		if (!error && response.statusCode == 200) {
     			console.log(body);
