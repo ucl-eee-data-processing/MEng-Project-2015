@@ -234,24 +234,59 @@ window.datenow = function() {
                 data : {'start_time' : document.getElementById('start_time').value, 'end_time' : document.getElementById('end_time').value},
                 success: function (response) {
                     // print out the data we get back
-                    console.log(response);
+                    //console.log(response);
                     var obj = jQuery.parseJSON(response);
+                   // console.log(obj);
 
-                    //get the key for each response
-                    for(key in Object.keys(obj)) {
-                    	var val = Object.keys(obj)[key];
-                    	window.val; // global variable for d3 plot
-                    	console.log(val);
-					};
+                   	var data2 = [];
 
-					//get the value for each response
-                    for(key in obj) {
-					    if(obj.hasOwnProperty(key)) {
-					        var value = obj[key];
-					        window.value; // global variable for d3 plot
-					        console.log(value);
-					    }
-					};
+					  var convert = "";
+					  for (var p in obj) {
+					    if( obj.hasOwnProperty(p) ) {
+					      var result = {
+					      				created_time: String(p),
+					      				predicted: obj[p]
+					      			}
+					      JSON.stringify(result);
+					      data2.push(result);
+					      console.log(data2);
+					    } 
+					  };
+
+					  var ndx2 = crossfilter(data2);
+					  var predicted2 = ndx2.dimension(function(d){return d.predicted; });
+					  // get the required date format
+                     var parseDate = d3.time.format("%Y-%m-%dT%H:%M").parse;
+                    
+                    
+                   //get the key (time) for each response
+                    data2.forEach(function(d){
+                    	d.date = parseDate(d.created_time);
+                    	d.predicted2 = d.predicted;
+                    });
+
+					var dateDimen2 = ndx2.dimension(function(d) {return d.date; });
+					var predictedHits2 = dateDimen2.group().reduceSum(function(d) {return d.predicted; });
+					
+					var minDate1 = dateDimen2.bottom(1)[0].date;
+					var maxDate1 = dateDimen2.top(1)[0].date;
+					// start of dc.js js sccript for predicting energy
+					var productslineChart2 = dc.lineChart("#predicted_values");
+					productslineChart2.width(700).height(350)
+								.dimension(dateDimen2)
+								.group(predictedHits2, 'Predicted')
+								.renderArea(true)
+								.x(d3.time.scale().domain([minDate1, maxDate1]))
+								.renderHorizontalGridLines(true)
+								.renderVerticalGridLines(true)
+								.legend(dc.legend().x(55).y(12).itemHeight(13).gap(5))
+								.brushOn(false)
+								.elasticX(true)
+								.yAxisLabel("Actual Energy")
+								.margins({top:11, left:51, right:11, bottom:51})
+								.on("renderlet", function (chart) {chart.selectAll("g.x text").attr('dx', '-35').attr('dy', '-9').attr('transform', "rotate(-90)");});
+								dc.renderAll();
+
                 },
                 error: function (xhr, status) {
                     // if request fails print out this
@@ -271,21 +306,25 @@ var parseDate2 = d3.time.format("%Y-%m-%dT%H:%M").parse;
 
 dataset.forEach(function(d){
 	d.date = parseDate2(d.created_time);
+	// console.log(d.date);
 	d.actual2 = d.actual;
+	// console.log(d.actual2);
 	d.total = Math.abs(d.actual - d.predicted);
 	d.month = d3.time.month(d.date);
 });
 
 var dateDimen = ndx.dimension(function(d) {return d.date;});
+
 var actualHits = dateDimen.group().reduceSum(function(d) {return d.actual2; });
 var predictedHits = dateDimen.group().reduceSum(function(d) {return d.predicted; });
 var total2 = dateDimen.group().reduceSum(function(d){return d.total; });
 
 var minDate = dateDimen.bottom(1)[0].date;
+//console.log(minDate);
 var maxDate = dateDimen.top(1)[0].date;
+//console.log(maxDate);
 
 // start of dc.js js sccript for predicting energy
-
 var productslineChart = dc.lineChart("#chart-product-hitsperday");
 productslineChart.width(700).height(350)
 			.dimension(dateDimen)

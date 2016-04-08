@@ -15,7 +15,10 @@
     "json-parser": "^1.1.5",
     "mocha": "^1.21.5",
     "morgan": "^1.7.0",
+    "ntwitter": "^0.5.0",
     "request": "^2.69.0",
+    "sentiment": "^1.0.6",
+    "sentiment-analysis": "^0.1.1",
     "util": "^0.10.3"
   },
   "devDependencies": {
