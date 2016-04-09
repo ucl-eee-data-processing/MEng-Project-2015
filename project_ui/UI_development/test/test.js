@@ -18,7 +18,7 @@ var serror ="http://localhost:3000/solutions/solutions_finance_path";
 var about = "http://localhost:3000/about";
 var contact = "http://localhost:3000/contact";
 
-// lets begin the UNIT testing
+// lets begin the UNIT testing for all the pages
 
 describe("Homepage unit test",function(){
 	// check the status code to see the system has the right status code
