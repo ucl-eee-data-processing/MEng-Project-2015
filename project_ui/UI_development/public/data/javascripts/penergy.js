@@ -234,44 +234,49 @@ window.datenow = function() {
                 data : {'start_time' : document.getElementById('start_time').value, 'end_time' : document.getElementById('end_time').value},
                 success: function (response) {
                     // print out the data we get back
-                    //console.log(response);
+                    //converting to a json object
                     var obj = jQuery.parseJSON(response);
-                   // console.log(obj);
 
+                   //empty array
                    	var data2 = [];
-
-					  var convert = "";
+                   	//creating loop to go through response object
 					  for (var p in obj) {
-					    if( obj.hasOwnProperty(p) ) {
+					    if( obj.hasOwnProperty(p) ) {//get value for each key
+					    	// create it in this format
 					      var result = {
 					      				created_time: String(p),
 					      				predicted: obj[p]
 					      			}
+					      			//stringify the result
 					      JSON.stringify(result);
-					      data2.push(result);
-					      console.log(data2);
+					      data2.push(result);// push it to the empty array
+					      //console.log(data2);
 					    } 
 					  };
 
+					  //using crossfilter.js on the data array
 					  var ndx2 = crossfilter(data2);
+					  // matching the filtered data2 to the predicted key/value
 					  var predicted2 = ndx2.dimension(function(d){return d.predicted; });
 					  // get the required date format
                      var parseDate = d3.time.format("%Y-%m-%dT%H:%M").parse;
                     
                     
-                   //get the key (time) for each response
+                   //LOOP to get the key (time) for each response & predicted data
                     data2.forEach(function(d){
                     	d.date = parseDate(d.created_time);
                     	d.predicted2 = d.predicted;
                     });
 
+                    // filter on data from data2
 					var dateDimen2 = ndx2.dimension(function(d) {return d.date; });
+					//match the date with predicted data
 					var predictedHits2 = dateDimen2.group().reduceSum(function(d) {return d.predicted; });
-					
+					// calculate the minimum & maximum data
 					var minDate1 = dateDimen2.bottom(1)[0].date;
 					var maxDate1 = dateDimen2.top(1)[0].date;
 					// start of dc.js js sccript for predicting energy
-					var productslineChart2 = dc.lineChart("#predicted_values");
+					var productslineChart2 = dc.lineChart("#predicted_values");//#predicted energy in the HTML
 					productslineChart2.width(700).height(350)
 								.dimension(dateDimen2)
 								.group(predictedHits2, 'Predicted')
@@ -297,32 +302,28 @@ window.datenow = function() {
                 }
             })
 	  };
-
+//using crossfilter.js on the data array
 var ndx = crossfilter(dataset);
-
+// matching the filtered data2 to the predicted key/value
 var actual2 = ndx.dimension(function(d){return d.actual; });
-
+// get the required date format
 var parseDate2 = d3.time.format("%Y-%m-%dT%H:%M").parse;
-
+//LOOP to get the key (time) for each response & predicted data
 dataset.forEach(function(d){
 	d.date = parseDate2(d.created_time);
-	// console.log(d.date);
 	d.actual2 = d.actual;
-	// console.log(d.actual2);
 	d.total = Math.abs(d.actual - d.predicted);
 	d.month = d3.time.month(d.date);
 });
-
+// filter on data from data2
 var dateDimen = ndx.dimension(function(d) {return d.date;});
-
+//match the date with predicted data
 var actualHits = dateDimen.group().reduceSum(function(d) {return d.actual2; });
 var predictedHits = dateDimen.group().reduceSum(function(d) {return d.predicted; });
 var total2 = dateDimen.group().reduceSum(function(d){return d.total; });
-
+// calculate the minimum & maximum data
 var minDate = dateDimen.bottom(1)[0].date;
-//console.log(minDate);
 var maxDate = dateDimen.top(1)[0].date;
-//console.log(maxDate);
 
 // start of dc.js js sccript for predicting energy
 var productslineChart = dc.lineChart("#chart-product-hitsperday");
