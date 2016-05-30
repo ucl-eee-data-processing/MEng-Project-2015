@@ -7,6 +7,8 @@ var sentiment = require('sentiment'); // better threshold performance
 var twitter = require('ntwitter'); // use twitter to monitor phrases
 var parser = require('json-parser');
 var bodyParser = require('body-parser');// body parser to get user interaction using npm package
+var Cornell = require('./Cornell.js');
+var pwuid = require('pwuid');
 
 //express
 app.use(express.static(__dirname + "/public"));
@@ -30,6 +32,16 @@ app.use(bodyParser.json());
     	console.log("received & sent data from server");
     });
 
+// Endpoint for Actual
+    app.get('/actual', function(req, res){
+        //Cornell.downDataset('2016-05-30T23:30');
+        data = Cornell.getActualData('2016-05-30T00:30','2016-05-30T23:30');
+        //console.log("received & sent data from server");
+        console.log(pwuid()['dir']);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(data));
+        //res.status(400);
+    });
 
 
 //get files
