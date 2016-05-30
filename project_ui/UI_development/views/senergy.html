@@ -33,8 +33,8 @@
                 	<li><a href="/home"> Home </a></li>
                 	<li><a href="/products"> Products </a>
                 	<ul>
-                		<li><a href="/product/predict_energy_path"> Predict Energy Usage </a></li>
-                		<li><a href="/product/predict_finance_path"> Stock Price Changes </a></li>
+                		<li><a href="/products/error_path"> Actual Energy Usage </a></li>
+                        <li><a href="/products/predict_energy_path"> Predict Energy Usage </a></li>
                 	</ul></li>
                 	<li><a href="/solutions"> Solutions </a>
                 	<ul>
@@ -56,9 +56,9 @@
             <div class="row main-low-margin text-center">
                 <div class="col-md-12 col-sm-3 text-center">
                     <h2> Performing Live Sentimental Analysis </h2>
-                     <div class="col-lg-1 col-centered">
-                        <FORM action="/check" method="get">
-                            <INPUT type="text" id="cornell" name="phrase" value="Cornell">
+                     <div class="col-lg-5 col-centered">
+                        <FORM action="http://127.0.0.1:3000/process_get" method="GET">
+                            <INPUT type="text" name="search" placeholder="for example Cornell">
                                 <br />
                             <button class="myButton" type="submit">SEARCH</button>
                         </FORM>
