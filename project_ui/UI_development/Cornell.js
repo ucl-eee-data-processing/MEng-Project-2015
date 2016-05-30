@@ -4,7 +4,7 @@ var webdriver = require('selenium-webdriver');
 var pwuid = require('pwuid');
 var browser = new webdriver.Builder()
                 .usingServer()
-                .withCapabilities({'browserName': 'chrome' })
+                .withCapabilities({'browserName': 'firefox' })
                 .build();
 var HOME_DIR = pwuid()['dir']
 

@@ -344,14 +344,14 @@ productslineChart.width(700).height(350)
 			.on("renderlet", function (chart) {chart.selectAll("g.x text").attr('dx', '-35').attr('dy', '-9').attr('transform', "rotate(-90)");});
 
 //computattion of pie chart for months
-var prod_monthRingChart = dc.pieChart("#chart-product-month");
+/*var prod_monthRingChart = dc.pieChart("#chart-product-month");
 var monthDim = ndx.dimension(function(d){return d.month; });
 var month_total = monthDim.group().reduceSum(function(d){return d.actual2; });
 
 prod_monthRingChart.width(150).height(150)
 				.dimension(monthDim)
 				.group(month_total)
-				.innerRadius(30);
+				.innerRadius(30);*/
 
 //end of dc.js js sccript for predicting energy
 dc.renderAll();
