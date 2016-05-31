@@ -148,7 +148,8 @@ app.get('/solutions/solutions_energy_path', function (req, res) {
                       "<title>Twitter Sentiment Analysis</title>\n" +
                       "</HEAD>\n" +
                       "<BODY>\n" +
-                      "<div class=\"col-md-12 col-sm-3 text-center\">" +
+                      "<div id=\"wrapper\" style=\"text-align:center\">" +
+                      "<div style=\"display: inline-block\">"+
                       "<P>\n" +
                       "Mood of the Tweets is as shown below <br>\n" +
                       "<IMG align=\"middle\" src=\"" + picSentiment() + "\"/><br>\n" +
@@ -156,6 +157,7 @@ app.get('/solutions/solutions_energy_path', function (req, res) {
                       "No of Tweets analyzed : " + twitterCount + " tweets...<br>" +
                       "</P>\n" +
                       "<A href=\"/restart\">Search another phrase</A>\n" +
+                      "</div> \n"+
                       "</div> \n"+
                       "</BODY>";
                   res.send(checkResp);
@@ -180,11 +182,11 @@ app.get('/restart', function (req, res){
 
 // Endpoint for Actual
     app.get('/actual', function(req, res){
-        Cornell.downDataset('2016-05-31T23:30');
-        //data = Cornell.getActualData('2016-05-30T00:30','2016-05-30T23:30');
+        //Cornell.downDataset('2016-05-31T23:30');
+        data = Cornell.getActualData('2016-05-30T00:30','2016-05-30T23:30');
         //console.log("received & sent data from server");
-        //res.setHeader('Content-Type', 'application/json');
-        //res.send(JSON.stringify(data));
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(data));
         //res.status(400);
     });
 

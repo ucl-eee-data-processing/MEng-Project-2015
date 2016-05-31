@@ -153,6 +153,9 @@ p {
     from {color: #fff}
     to {color: #000}
 }
+/*#glasses{
+  margin: 50% 50%;
+}*/
 
 .bottam-pad {
     padding-bottom: 40px;
@@ -181,6 +184,19 @@ p {
 body > section {
   padding: 70px 0;
 }
+
+.container_search{
+  position: relative;
+  margin-top:78px; 
+  margin-right:auto; 
+  margin-bottom:0px; 
+  margin-left:auto;
+}
+.search_input{
+  background: #f8f8f8;
+  border: 1px solid #000;
+}
+
 
 /*************************
 ********* Contact Us CSS ******
