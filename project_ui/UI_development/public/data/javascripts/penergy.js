@@ -256,7 +256,7 @@ var productslineChart = dc.lineChart("#chart-product-hitsperday");
 productslineChart.width(700).height(350)
 			.dimension(dateDimen)
 			.group(actualHits, 'actual')
-			.group(predictedHits, 'predicted')
+			.stack(predictedHits, 'predicted')
 			.stack(total2, 'Abs. Diff.')
 			.renderArea(true)
 			.x(d3.time.scale().domain([minDate,maxDate]))
@@ -265,7 +265,7 @@ productslineChart.width(700).height(350)
 			.legend(dc.legend().x(55).y(12).itemHeight(13).gap(5))
 			.brushOn(false)
 			.elasticX(true)
-			.yAxisLabel("Actual Energy")
+			.yAxisLabel("Overall Energy Usage")
 			.margins({top:11, left:51, right:11, bottom:51})
 			.on("renderlet", function (chart) {chart.selectAll("g.x text").attr('dx', '-35').attr('dy', '-9').attr('transform', "rotate(-90)");});
 
@@ -280,6 +280,8 @@ prod_monthRingChart.width(150).height(150)
 				.innerRadius(30);*/
 
 //end of dc.js js sccript for predicting energy
+
+
 dc.renderAll();
 
 });
@@ -361,7 +363,7 @@ window.datenow = function() {
 								.legend(dc.legend().x(55).y(12).itemHeight(13).gap(5))
 								.brushOn(false)
 								.elasticX(true)
-								.yAxisLabel("Actual Energy")
+								.yAxisLabel("Predicted Energy Usage (kWh)")
 								.margins({top:11, left:51, right:11, bottom:51})
 								.on("renderlet", function (chart) {chart.selectAll("g.x text").attr('dx', '-35').attr('dy', '-9').attr('transform', "rotate(-90)");});
 								dc.renderAll();
@@ -417,7 +419,7 @@ window.datenow = function() {
 								.legend(dc.legend().x(55).y(12).itemHeight(13).gap(5))
 								.brushOn(false)
 								.elasticX(true)
-								.yAxisLabel("Actual Energy (kWh)")
+								.yAxisLabel("Actual Energy Usage (kWh)")
 								.margins({top:11, left:51, right:11, bottom:51})
 								.on("renderlet", function (chart) {chart.selectAll("g.x text").attr('dx', '-35').attr('dy', '-9').attr('transform', "rotate(-90)");});
 								dc.renderAll();    
