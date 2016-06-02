@@ -232,12 +232,5 @@ app.get('/contact', function (req, res){
 
 
 
-//start server
-// port = process.env.PORT || 3000;
-
-// http.listen(port, function(){
-//  console.log("Listening on port: "+port)
-// });
-
 app.listen (3000);
 console.log('server running on port 3000');
