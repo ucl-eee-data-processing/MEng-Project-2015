@@ -1,0 +1,210 @@
+Big Data Processing Pipeline Under cloud systems
+
+
+Coding it up
+We're going to use Node.js to create the dashboard due to its event driven, non-blocking I/O nature suing express module which allows information to be updated to the screen in near realtime without page refresh.
+Clone the repo to have access to the code
+
+
+Setting up the App
+Clone the repo 
+npm init in the repo
+cd into the cloned repo (Change Directory to MEng_Project/project_ui/UI_development)
+
+Now, let's install all the libraries we will require on the server side
+run "./bootstrap.sh". This contains all the required/used libraries on the server-side
+
+Your directory structure for the folders should look as shown below:
+UI_development
+	lib
+	node_modules
+	public
+	routes
+	test
+	test-example
+	views
+bootstrap.sh
+Cornell.js
+package.json
+README.js
+server.js
+
+The most important files/folders are:
+	public
+		data
+			images
+			javascripts
+			stylesheets
+		index.html
+		project_vid.mp4
+	test
+		test.js
+	views
+		html pages
+Cornell.js
+server.js
+
+
+This is divided into 2 structures. Visualizing the data from the pipeline and Visualizing data from Twitter
+
+Firstly, Data Visualization from the Pipeline
+
+server.js
+Now that we have the architecture for our app layed out, it’s time to jump in and start coding it up! Open up the server.js file and put the following code:
+
+var express = require('express');
+var app = express();
+var morgan = require('morgan');
+var request = require('request');
+var http = require('http').Server(app);
+var path = require('path');
+var destroy = require('destroy');
+//var sentiment = require('sentiment-analysis'); lower threshold performance
+var sentiment = require('sentiment'); // better threshold performance
+var Twitter = require('ntwitter'); // use twitter to monitor phrases
+var parser = require('json-parser');
+var bodyParser = require('body-parser');// body parser to get user interaction using npm package
+var Cornell = require('./Cornell.js');
+var pwuid = require('pwuid');
+
+This block of code imports express and its dependencies, and also express
+
+app.get('/home', function (req, res){
+	res.sendFile('public/index.html', {root: __dirname});
+	});
+This block serves the html pages required and their respective routes on the html page
+
+
+Below this, put the following code:
+app.use(express.static(__dirname + "/public"));
+app.listen (3000);
+console.log('server running on port 3000');
+This tells our server which port to listen on (port 300) and where to look when loading javascript and images.
+
+The basic node.js app should be able to run successfully now
+
+
+Retrieving Information from the Pipeline
+On the server-side (server.js)
+
+app.get('/predict', function(req, res){
+    	console.log(req.query.start_time);
+    	console.log(req.query.end_time);
+    	request('http://rodrig-2.ee.ucl.ac.uk:8080/predict/' + req.query.start_time + '/' + req.query.end_time, function (error, response, body){ // connects the server to the created pipeline
+    		if (!error && response.statusCode == 200) {
+    			console.log(body);
+    			res.type('text/json');
+    			res.json(body); // sends response back to the client side so as to plot chart
+    		}
+    	});
+    	console.log("received & sent data from server");
+    });
+The client sends a GET URL /predict to the server with a data for start_time & end_time which the user chooses
+The query is then passed to the server via Ajax call & then to the pipeline via request
+************This only works under UCL's eduroam network**************
+
+From the client-side Pipeline Data Visualization
+Check the files used for each view to know the scripts running in each view
+
+d3 and dc are used to visualize the data
+The code in each one follows very similar pattens so we shall go through the most robust one
+
+go to file public/data/javascripts/penergy.js
+
+starting from line 206, i've used Channing to make 2 ajax calls so as to receive both actual & predicted data
+and the data gets populated to the client via datnow function created which contains the d3 & dc code
+
+follow the datenow function code which has been heavily commented so as to see how d3 & dc works
+the function is called in the penergy.html page under views folder
+
+
+
+
+
+
+
+Secondly, Twitter Sentimental Analytics 
+
+The user needs to setup an account on https://dev.twitter.com/ 
+THE user needs to create an app on https://apps.twitter.com/
+Go to your app dashboard, go to permission and change permission to Read, Write and Access direct messages
+
+Go to settings and enter http://127.0.0.1:3000 as your website
+Still under settings, set the callback url to http://127.0.0.1:3000/auth/twitter/callback/
+
+Finally, go to Keys and Access Tokens and make notes of your:
+	 consumer_key: ************,
+	 consumer_secret: ************,
+	 access_token_key: ************,
+	 access_token_secret: ************
+
+head back to your CLI and 
+First, let’s install a .env reader to store all of our passwords and API keys we will be using:
+
+npminstall--savedotenv
+
+Then, go ahead and create a .env file to store everything:
+
+touch.env
+
+Also, open up server.js and require the library and load the .env file:
+
+require('dotenv').load()
+
+
+Now, go over to https://apps.twitter.com/ to get the consumer key, consumer secret key, access token, and access token secret. Once you grab those, open up the .env file you just created, put the following code in, making sure to to replace the ************, with their repective strings:
+consumer_key = ************
+consumer_secret = ************ 
+access_token = ************
+access_token_secret = ************
+
+
+Then, let’s add the .env file to our .gitignore so it’s not included when we push up to Github. We don’t want to share our passwords:
+  
+.env
+
+
+Now, let's install Twitter's Node.js client library:  
+
+npm install --save ntwitter
+
+Open up your index.js file, and let’s add the Twitter client and initialize it: 
+
+var Twitter = require('ntwitter')
+var twitterClient = newTwitter({ 
+consumer_key:process.env.consumer_key, 
+consumer_secret:process.env.consumer_secret, 
+access_token_key:process.env.access_token, 
+access_token_secret:process.env.access_token_secret
+});
+
+
+you should now be connected to twitter with the credentials
+
+You can test the connection by:
+
+
+Setting up a stream which will track keywords, hashtags, or users on Twitter; when it gets one, it will print it to the console. Add the following code into server.js:
+
+twitterClient.stream('statuses/filter',{track:'trump'}, function(stream){ stream.on('data',function(tweet){
+console.log("------------------------------");
+console.log(tweet.text); });
+stream.on('error',function(error){ console.log(error);
+}); 
+});
+For the time being, we’ll be monitoring what everyone on Twitter is saying about trump, because you know, who doesn’t like trump?
+
+Run
+
+node server.js
+
+and watch the stream of tweets come in about trump.
+
+
+follow the code comments for better understanding of how the sentiment works..
+
+senergy.html is the views page for the server twitter sentimental analytics which connects via ajax GET call api /process_get
+
+
+for any further question, send a friend request to Google && it'll surely help you!!!
+Goodluck...
